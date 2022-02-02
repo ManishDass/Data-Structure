@@ -28,6 +28,7 @@
 *Custom Office Templates
 *Study Material
 *Workspaces
+*.vscode
 ipch/
 obj/
 [Bb]in

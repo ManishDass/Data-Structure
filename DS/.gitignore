@@ -29,6 +29,7 @@
 *Study Material
 *Workspaces
 *.vscode
+*/.vscode
 ipch/
 obj/
 [Bb]in

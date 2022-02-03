@@ -8,27 +8,6 @@ public:
     node *left, *right;
 };
 
-node *create()
-{
-    int x;
-    node *newNode = new node();
-    cin >> x;
-
-    if (x == -1)
-    {
-        return 0;
-    }
-
-    newNode->data = x;
-    cout << "\nEnter Data for left child: ";
-    newNode->left = create();
-
-    cout << "\nEnter Data for right child: ";
-    newNode->right = create();
-
-    return newNode;
-}
-
 void preOrderTraversal(node *temp)
 {
     if (temp != NULL)
@@ -60,15 +39,28 @@ void postOrderTraversal(node *temp)
     }
 }
 
-main()
+node *newNode(int value)
 {
-    cout << "\nEnter data for Root Child: ";
-    node *root = create();
+    node *temp = new node();
+    temp->data = value;
+    temp->left = NULL;
+    temp->right = NULL;
+    return temp;
+}
+
+int main()
+{
+    node *root = newNode(7);
+    root->left = newNode(21);
+    root->right = newNode(83);
+
+    //       7
+    //    21   83
 
     cout << "\nPreorder Traversal: ";
-    preOrderTraversal(root);
+    preOrderTraversal(root); // Output: 7 21 83
     cout << "\nInorder Traversal: ";
-    inOrderTraversal(root);
+    inOrderTraversal(root); // Output: 21 7 83
     cout << "\nPostorder Traversal: ";
-    postOrderTraversal(root);
+    postOrderTraversal(root); // Output: 21 83 7
 }

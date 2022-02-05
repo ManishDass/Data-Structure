@@ -1,12 +1,15 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+void change(int *test)
+{
+    *test = 15;
+}
+
 int main()
 {
-    int arr[2];
+    int arr[5] = {4, 5, 6, 7, 8};
+    int(*p)[5];
 
-    for (int i = 0; i < 2; i++)
-    {
-        cout << arr[i] << " ";
-    }
+    cout << *p << endl;
 }

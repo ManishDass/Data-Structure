@@ -1,15 +1,38 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-void change(int *test)
+class node
 {
-    *test = 15;
+public:
+    int data;
+    node *next;
+};
+node *head = NULL; // global head pointer
+
+void insertAtEnd(int value)
+{
+    node *newNode = new node();
+    newNode->data = value;
+
+    if (head == NULL) // if there is no other node exist then no need to traverse
+    {
+        head = newNode;
+    }
+    else
+    {
+        node *temp = head;
+        while (temp->next != NULL)
+        {
+            temp = temp->next;
+        }
+        temp->next = newNode;
+    }
 }
 
 int main()
 {
-    int arr[5] = {4, 5, 6, 7, 8};
-    int(*p)[5];
-
-    cout << *p << endl;
+    insertAtEnd(12);
+    insertAtEnd(23);
+    insertAtEnd(91);
+    insertAtEnd(77);
 }

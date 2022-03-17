@@ -13,7 +13,7 @@ int sumOfFibonacci(int n)
 
 int main()
 {
-    int n = 3;
+    int n = 8;
     int flag = 0;
 
     while (flag < n)

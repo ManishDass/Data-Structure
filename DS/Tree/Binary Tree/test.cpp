@@ -1,38 +1,42 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-class node
+class test
 {
+private:
+    int x, y;
+
 public:
-    int data;
-    node *next;
+    test()
+    {
+        x = y = 0;
+    }
+    test(int a, int b)
+    {
+        x = a;
+        y = b;
+    }
+    void input(int a, int b)
+    {
+        x = a;
+        y = b;
+    }
+    void output()
+    {
+        cout << "Sum=" << (x + y);
+    }
 };
-node *head = NULL; // global head pointer
-
-void insertAtEnd(int value)
-{
-    node *newNode = new node();
-    newNode->data = value;
-
-    if (head == NULL) // if there is no other node exist then no need to traverse
-    {
-        head = newNode;
-    }
-    else
-    {
-        node *temp = head;
-        while (temp->next != NULL)
-        {
-            temp = temp->next;
-        }
-        temp->next = newNode;
-    }
-}
-
 int main()
 {
-    insertAtEnd(12);
-    insertAtEnd(23);
-    insertAtEnd(91);
-    insertAtEnd(77);
+    test t1;         // default constructor
+    test t2(10, 20); // parameterized constructor
+    test t3;
+    int s;
+    t3.input(50, 60); // member function call
+
+    t1.output();
+    t2.output();
+    t3.output();
+
+    return 0;
 }

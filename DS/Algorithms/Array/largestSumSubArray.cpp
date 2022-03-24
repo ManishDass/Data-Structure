@@ -8,18 +8,22 @@ using namespace std;
 
 int main()
 {
-    int arr[] = {-5, 4, 6, -3, 4, -1};
+    int arr[] = {3, -2, 5, -1};
     int n = sizeof(arr) / sizeof(arr[0]);
     int sum;
-    int temp;
+    int maxSum = INT_MIN;
 
     for (int i = 0; i < n; i++)
     {
+        sum = 0;
         for (int j = i; j < n; j++)
         {
-            // cout << arr[j] << endl;
             sum += arr[j];
+
+            if (sum > maxSum)
+                maxSum = sum;
         }
-        cout << "Sum " << i << ": " << sum << endl;
     }
+
+    cout << "Max Subarray: " << maxSum << endl;
 }

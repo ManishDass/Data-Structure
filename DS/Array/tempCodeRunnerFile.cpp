@@ -1,1 +1,4 @@
-nums.erase(nums.begin());
+for (int i : right)
+    {
+        cout << i << endl;
+    }

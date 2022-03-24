@@ -1,1 +1,1 @@
-cout << arr[j] << endl;
+sum += arr[i];
